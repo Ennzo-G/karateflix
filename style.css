@@ -1,0 +1,746 @@
+/* ==========================================================================
+   KARATEFLIX • ESTILIZAÇÃO CINEMATOGRÁFICA ESTILO NETFLIX
+   Foco em Dados Padronizados Centralizados e Espaços para Imagens
+   ========================================================================== */
+
+:root {
+  --font-netflix: 'Bebas Neue', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Cores Netflix & Marcial */
+  --netflix-red: #E50914;
+  --netflix-red-hover: #b80710;
+  --netflix-red-glow: rgba(229, 9, 20, 0.45);
+  
+  --bg-black: #141414;
+  --bg-deep: #0a0a0a;
+  --bg-card: #1f1f1f;
+  --bg-card-subtle: #2a2a2a;
+  --bg-card-hover: #333333;
+  
+  --text-white: #ffffff;
+  --text-light: #e5e5e5;
+  --text-gray: #aaaaaa;
+  --text-muted: #757575;
+  
+  --border-dark: #333333;
+  --border-focus: #555555;
+  
+  --gold-accent: #f5c518;
+  --gold-glow: rgba(245, 197, 24, 0.3);
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  
+  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-netflix: 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-black);
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--bg-black);
+  color: var(--text-light);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Header Superior Estilo Netflix
+   ========================================================================== */
+.netflix-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 80%, transparent 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.netflix-logo {
+  font-family: var(--font-netflix);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--netflix-red);
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1;
+}
+
+.logo-badge {
+  font-size: 0.65rem;
+  font-family: var(--font-text);
+  background: #333;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.brand-subtext {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  border-left: 1px solid #444;
+  padding-left: 0.9rem;
+  line-height: 1.2;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-white);
+}
+
+/* ==========================================================================
+   Cabeçalho / Hero Banner (Com Espaço para Imagem Futura)
+   ========================================================================== */
+.hero-banner-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 2rem 1.5rem;
+}
+
+.hero-banner-box {
+  position: relative;
+  min-height: 250px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+  border: 1px solid var(--border-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Espaço Reservado para Imagem no Cabeçalho */
+.hero-image-placeholder {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 80% 50%, rgba(229, 9, 20, 0.15) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(15, 15, 15, 0.96) 0%, rgba(15, 15, 15, 0.8) 50%, rgba(15, 15, 15, 0.4) 100%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 10px, transparent 10px, transparent 20px);
+  z-index: 1;
+}
+
+.hero-placeholder-tag {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-tagline {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--netflix-red);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-main-title {
+  font-family: var(--font-netflix);
+  font-size: 2.8rem;
+  line-height: 1.05;
+  color: var(--text-white);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* ==========================================================================
+   Trilho de Cartões / Ícones de Faixa (Estilo Netflix Rows)
+   ========================================================================== */
+.netflix-row-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem 2rem;
+}
+
+.row-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.row-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.row-title::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background-color: var(--netflix-red);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.row-hint {
+  font-size: 0.82rem;
+  color: var(--text-gray);
+}
+
+/* Trilho com Scroll Horizontal Suave */
+.netflix-track-wrapper {
+  position: relative;
+}
+
+.netflix-cards-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.75rem 0.25rem 1.25rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-dark) transparent;
+}
+
+.netflix-cards-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.netflix-cards-track::-webkit-scrollbar-thumb {
+  background: var(--border-dark);
+  border-radius: 4px;
+}
+
+/* Card Estilo Miniatura Netflix */
+.belt-card-item {
+  flex: 0 0 180px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1rem 0.85rem;
+  cursor: pointer;
+  transition: var(--transition-netflix);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 135px;
+}
+
+.belt-card-item:hover {
+  transform: scale(1.08) translateY(-4px);
+  background-color: var(--bg-card-hover);
+  border-color: var(--text-white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.belt-card-item.active {
+  border-color: var(--netflix-red);
+  box-shadow: 0 0 18px var(--netflix-red-glow), 0 4px 12px rgba(0, 0, 0, 0.8);
+  background-color: var(--bg-card-subtle);
+  transform: scale(1.04);
+}
+
+.belt-card-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--netflix-red);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-grau-tag {
+  font-family: var(--font-netflix);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.card-time-pill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+/* Gráfico da Faixa de Karatê */
+.card-belt-strip {
+  width: 100%;
+  height: 16px;
+  border-radius: 3px;
+  margin: 0.6rem 0;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.card-belt-names {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-belt-transition {
+  font-size: 0.72rem;
+  color: var(--text-gray);
+}
+
+/* ==========================================================================
+   Layout Principal: 3 Colunas (Laterais + Centro Padronizado)
+   ========================================================================== */
+.main-stage-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.three-column-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (max-width: 1180px) {
+  .three-column-grid {
+    grid-template-columns: 220px 1fr 220px;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .three-column-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Slots para Imagens nas Laterais (Espaços Reservados)
+   ========================================================================== */
+.side-image-slot {
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.side-image-slot:hover {
+  border-color: #555;
+  background-color: var(--bg-card-subtle);
+}
+
+.slot-icon-camera {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.slot-title {
+  font-family: var(--font-netflix);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+.slot-description {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  max-width: 220px;
+}
+
+.slot-tag-future {
+  margin-top: 1.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-accent);
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Centro Padronizado: Foco nos Dados de Exigência da Faixa
+   ========================================================================== */
+.center-data-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Cabeçalho da Graduação Selecionada */
+.panel-belt-header {
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header-transition-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge-grau-destaque {
+  font-family: var(--font-netflix);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--netflix-red);
+  background: rgba(229, 9, 20, 0.12);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  padding: 0.15rem 0.75rem;
+  border-radius: var(--radius-sm);
+  line-height: 1.1;
+}
+
+.panel-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.panel-summary-desc {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+/* Bloco 1: Carência e Aulas (Cards em Grid) */
+.standard-block-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-white);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.standard-block-title span.block-num {
+  width: 20px;
+  height: 20px;
+  background-color: var(--netflix-red);
+  color: #fff;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.carencia-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .carencia-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-box {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-family: var(--font-netflix);
+  font-size: 1.5rem;
+  color: var(--gold-accent);
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+
+/* Bloco 2: Kihon (Técnicas Básicas) */
+.kihon-container {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.kihon-rule-box {
+  background-color: rgba(229, 9, 20, 0.08);
+  border-left: 3px solid var(--netflix-red);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.kihon-subgroup {
+  margin-bottom: 0.85rem;
+}
+
+.kihon-subgroup:last-child {
+  margin-bottom: 0;
+}
+
+.subgroup-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.items-list-standard {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.items-list-standard li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.items-list-standard li strong {
+  color: var(--text-white);
+  min-width: 140px;
+}
+
+.items-list-standard li span.desc {
+  color: var(--text-gray);
+  font-size: 0.82rem;
+}
+
+/* Bloco 3: Katá (Formas) */
+.kata-container {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.kata-highlight-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.kata-mode-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--netflix-red);
+  background: rgba(229, 9, 20, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.kata-desc-text {
+  font-size: 0.88rem;
+  color: var(--text-gray);
+  line-height: 1.45;
+}
+
+/* Bloco 4: Kumitê (Combate) */
+.kumite-container {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kumite-modality-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.kumite-rules-text {
+  font-size: 0.88rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+/* Bloco 5: Testes Especiais & Conhecimentos */
+.conhecimentos-container {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+}
+
+.conhecimento-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.conhecimento-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+}
+
+/* ==========================================================================
+   Rodapé Oficial Estilo Netflix
+   ========================================================================== */
+.netflix-footer {
+  border-top: 1px solid var(--border-dark);
+  background-color: var(--bg-deep);
+  padding: 2.5rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.footer-inner-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-inner-content strong {
+  color: var(--text-light);
+}

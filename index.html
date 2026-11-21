@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Karatêflix - Catálogo Oficial de Exigências Mínimas para Graduação de Faixas de Karatê (FIBK).">
+  <title>Karatêflix • Exigências de Graduação de Faixas</title>
+
+  <!-- Tipografia Netflix / Montserrat / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Header Superior Estilo Netflix
+       ======================================================================== -->
+  <header class="netflix-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="netflix-logo">
+          <span>KARATÊFLIX</span>
+          <span class="logo-badge">FIBK</span>
+        </div>
+        <div class="brand-subtext">
+          Programa Oficial de Exame de Graduação
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#trilho-faixas" class="nav-link active">Faixas & Patamares</a>
+        <a href="#dados-centrais" class="nav-link">Exigências Centrais</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Cabeçalho / Hero Banner (Com Espaço Reservado para Imagem Futura)
+       ======================================================================== -->
+  <section class="hero-banner-container">
+    <div class="hero-banner-box">
+      <!-- Espaço Reservado para Imagem de Fundo no Cabeçalho -->
+      <div class="hero-image-placeholder"></div>
+      <div class="hero-placeholder-tag">
+        <span>📷</span>
+        <span>Espaço Reservado para Imagem de Cabeçalho / Banner</span>
+      </div>
+
+      <!-- Conteúdo Sobreposto do Banner -->
+      <div class="hero-content">
+        <div class="hero-tagline" id="heroGraduationBadge">6º KYU • INICIANTE</div>
+        <h1 class="hero-main-title" id="heroBeltTransition">De Faixa Branca para Faixa Amarela</h1>
+        <p class="hero-description">
+          Acesse abaixo as exigências mínimas obrigatórias para avançar de faixa segundo as normas da Federação Interestilos Baiana de Karatê (FIBK), sob direção do Shihan Richard Braga.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Fileira de Miniaturas das Faixas (Trilho Netflix)
+       ======================================================================== -->
+  <section class="netflix-row-section" id="trilho-faixas">
+    <div class="row-header">
+      <h2 class="row-title">Selecione a Faixa de Destino (Próximo Patamar)</h2>
+      <span class="row-hint">Clique em qualquer miniatura para carregar os dados centralizados</span>
+    </div>
+
+    <div class="netflix-track-wrapper">
+      <div class="netflix-cards-track" id="netflixBeltsTrack">
+        <!-- Inserido dinamicamente via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Estrutura Principal de 3 Colunas (Laterais para Imagens + Centro Padronizado)
+       ======================================================================== -->
+  <main class="main-stage-container" id="dados-centrais">
+    <div class="three-column-grid">
+
+      <!-- Lateral Esquerda (Espaço Reservado para Imagem Futura) -->
+      <aside class="side-image-slot slot-lateral-esquerda">
+        <div class="slot-icon-camera">📷</div>
+        <h3 class="slot-title">Imagem Lateral Esquerda</h3>
+        <p class="slot-description">
+          Espaço preparado para inserir foto do praticante, postura marcial ou imagem de treino do dojo.
+        </p>
+        <span class="slot-tag-future">Disponível para Imagem</span>
+      </aside>
+
+      <!-- Centro: Dados Padronizados Centralizados -->
+      <section class="center-data-panel" id="centerDataPanel">
+        <!-- Renderizado dinamicamente via app.js com os 5 blocos padronizados -->
+      </section>
+
+      <!-- Lateral Direita (Espaço Reservado para Imagem Futura) -->
+      <aside class="side-image-slot slot-lateral-direita">
+        <div class="slot-icon-camera">🥋</div>
+        <h3 class="slot-title">Imagem Lateral Direita</h3>
+        <p class="slot-description">
+          Espaço preparado para inserir diagrama técnico, emblema do estilo Shotokan ou infográfico de golpe.
+        </p>
+        <span class="slot-tag-future">Disponível para Imagem</span>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Rodapé Oficial
+       ======================================================================== -->
+  <footer class="netflix-footer">
+    <div class="footer-inner-content">
+      <div>
+        <strong>Federação Interestilos Baiana de Karatê (FIBK)</strong> • Entidade de Administração do Desporto<br>
+        Presidente: <strong>Shihan Richard Braga</strong> • Morro do Chapéu - BA
+      </div>
+      <div>
+        Karatêflix • Sistema de Consulta e Padronização de Graduação Marcial.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
